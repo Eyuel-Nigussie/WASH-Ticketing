@@ -1,14 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-
 
 const UserProfileScreen = () => {
-  const navigation = useNavigation();
-
-  const navigateToSignIn = () => {
-    navigation.navigate('SignIn');
-  };
 
   const handleSignOut = () => {
     // Perform sign-out logic here
@@ -23,12 +16,13 @@ const UserProfileScreen = () => {
   };
 
   return (
-    <View className="flex-1 justify-center items-center bg-green-500">
-      <Text className="text-4xl text-white font-bold mb-6">User Profile</Text>
+    <View className="flex-1 justify-center items-center">
+      <Text className="text-4xl text-black font-bold mb-6">User Profile</Text>
 
       <View className="bg-white p-4 rounded-md w-80 mb-4">
         <Text className="text-blue-500 text-lg">Username: {userData.username}</Text>
         <Text>Email: {userData.email}</Text>
+        <Text>Phone: +2519xxxxxxxxx</Text>
         {/* Add more user details here */}
       </View>
 
@@ -40,12 +34,7 @@ const UserProfileScreen = () => {
         <Text className="text-red-500 text-center">Sign Out</Text>
       </TouchableOpacity>
 
-      <View className="flex-row">
-        <Text className="text-white">Already have an account? </Text>
-        <TouchableOpacity onPress={navigateToSignIn}>
-          <Text className="text-blue-500">Sign In</Text>
-        </TouchableOpacity>
-      </View>
+     
     </View>
   );
 };

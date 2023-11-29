@@ -10,8 +10,8 @@ const SignUpScreen = () => {
         navigation.navigate('SignIn'); // Replace 'SignIn' with the name of your SignIn screen
    };
   return (
-    <View className="flex-1 justify-center items-center bg-blue-500">
-      <Text className="text-4xl text-white font-bold mb-6">Sign Up</Text>
+    <View className="flex-1 justify-center items-center">
+      <Text className="text-4xl text-black font-bold mb-6">Sign Up</Text>
 
       <TextInput
         className="bg-white w-80 p-2 mb-4 rounded-md"
@@ -41,7 +41,7 @@ const SignUpScreen = () => {
         <Text className="text-blue-500 text-center">Sign Up</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={navigateToSignIn}>
-        <Text className="text-white mt-4'">Already have an account? Sign In</Text>
+        <Text className="text-black mt-4'">Already have an account? <Text className="text-blue-500">Sign In</Text></Text>
       </TouchableOpacity>
     </View>
   );
