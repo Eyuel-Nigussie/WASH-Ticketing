@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const UserProfileScreen = () => {
 
@@ -16,25 +17,38 @@ const UserProfileScreen = () => {
   };
 
   return (
-    <View className="flex-1 justify-center items-center">
-      <Text className="text-4xl text-black font-bold mb-6">User Profile</Text>
+    <View style={{ flex: 1, padding: 20, backgroundColor: '#F2F2F2' }}>
+      <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#003366', marginBottom: 20 }}>
+        User Profile
+      </Text>
 
-      <View className="bg-white p-4 rounded-md w-80 mb-4">
-        <Text className="text-blue-500 text-lg">Username: {userData.username}</Text>
-        <Text>Email: {userData.email}</Text>
-        <Text>Phone: +2519xxxxxxxxx</Text>
+      <View style={{ backgroundColor: '#FFF', padding: 20, borderRadius: 8, marginBottom: 20 }}>
+        <Text style={{ color: '#003366', fontSize: 18, marginBottom: 10 }}>
+          Username: {userData.username}
+        </Text>
+        <Text style={{ color: '#003366', fontSize: 16, marginBottom: 10 }}>
+          Email: {userData.email}
+        </Text>
+        <Text style={{ color: '#003366', fontSize: 16 }}>Phone: +2519xxxxxxxxx</Text>
         {/* Add more user details here */}
       </View>
 
-      <TouchableOpacity className="bg-white p-2 rounded-md mb-4">
-        <Text className="text-blue-500 text-center">Edit Profile</Text>
+      <TouchableOpacity
+        style={{ backgroundColor: '#003366', padding: 16, borderRadius: 8, marginBottom: 20 }}
+      >
+        <Text style={{ color: '#FFF', fontSize: 16, textAlign: 'center' }}>
+          Edit Profile <Icon name="edit" size={18} color="#FFF" />
+        </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity className="bg-white p-2 rounded-md mb-4" onPress={handleSignOut}>
-        <Text className="text-red-500 text-center">Sign Out</Text>
+      <TouchableOpacity
+        style={{ backgroundColor: '#FF4D4F', padding: 16, borderRadius: 8, marginBottom: 20 }}
+        onPress={handleSignOut}
+      >
+        <Text style={{ color: '#FFF', fontSize: 16, textAlign: 'center' }}>
+          Sign Out <Icon name="sign-out" size={18} color="#FFF" />
+        </Text>
       </TouchableOpacity>
-
-     
     </View>
   );
 };

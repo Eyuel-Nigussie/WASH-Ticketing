@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
+import Toast from 'react-native-toast-message';
 
 const RequestTicketScreen = () => {
   const navigation = useNavigation();
@@ -11,6 +12,13 @@ const RequestTicketScreen = () => {
 
   const handleRequest = () => {
     // Handle ticket request logic
+
+    // Show success message
+    Toast.show({
+      type: 'success',
+      text1: 'Request Submitted',
+      visibilityTime: 3000, // 3 seconds
+    });
   };
 
   return (
@@ -62,6 +70,21 @@ const RequestTicketScreen = () => {
           <Picker.Item label="Level 3" value="level3" />
           <Picker.Item label="Level 4" value="level4" />
         </Picker>
+
+
+        <Text style={styles.label}>Water Or Sanitation</Text>
+        <Picker
+          selectedValue={selectedLevel}
+          onValueChange={(itemValue) => setSelectedLevel(itemValue)}
+          style={styles.picker}
+        >
+          <Picker.Item label="Select a level" value="" />
+          <Picker.Item label="Level 1" value="level1" />
+          <Picker.Item label="Level 2" value="level2" />
+          <Picker.Item label="Level 3" value="level3" />
+          <Picker.Item label="Level 4" value="level4" />
+        </Picker>
+
 
         <TouchableOpacity style={styles.submitButton} onPress={handleRequest}>
           <Text style={styles.buttonText}>Submit Request</Text>
